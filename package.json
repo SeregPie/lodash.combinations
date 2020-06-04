@@ -1,7 +1,7 @@
 {
 	"name": "lodash.combinations",
 	"version": "18.10.0",
-	"description": "Calculates all possible combinations of a certain size.",
+	"description": "Calculates all possible combinations without repetition of a certain size.",
 	"keywords": [
 		"array",
 		"collection",

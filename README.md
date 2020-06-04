@@ -2,7 +2,7 @@
 
 `_.combinations(collection, n)`
 
-Calculates all possible combinations of a certain size.
+Calculates all possible combinations without repetition of a certain size.
 
 | argument | description |
 | ---: | :--- |
