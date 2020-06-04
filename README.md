@@ -64,3 +64,10 @@ Also accepts array-like values.
 let combinations = _('abcde').combinations(3).map(v => _.join(v, '')).value();
 // => ['abc', 'abd', 'abe', 'acd', 'ace', 'ade', 'bcd', 'bce', 'bde', 'cde']
 ```
+
+## see also
+
+- [lodash.permutations](https://github.com/SeregPie/lodash.permutations)
+- [lodash.multicombinations](https://github.com/SeregPie/lodash.multicombinations)
+- [lodash.multipermutations](https://github.com/SeregPie/lodash.multipermutations)
+- [lodash.product](https://github.com/SeregPie/lodash.product)
