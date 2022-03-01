@@ -1,0 +1,40 @@
+{
+	"name": "lodash.combinations",
+	"version": "19.0.0",
+	"description": "Calculates all possible combinations without repetition of a certain size.",
+	"keywords": [
+		"array",
+		"collection",
+		"combination",
+		"combinatorics",
+		"lodash",
+		"mixin"
+	],
+	"license": "MIT",
+	"author": "Sergej Sintschilin <seregpie@gmail.com>",
+	"main": "index.umd.js",
+	"exports": {
+    ".": {
+			"import": "./index.esm.js",
+      "default": "./index.umd.js",
+			"types": "./index.d.ts"
+    },
+    "./bsnntqzx": {
+      "import": "./bsnntqzx/index.esm.js",
+      "default": "./bsnntqzx/index.umd.js",
+			"types": "./bsnntqzx/index.d.ts"
+    },
+    "./nassdoej": {
+			"import": "./nassdoej/index.esm.js",
+      "default": "./nassdoej/index.umd.js",
+			"types": "./nassdoej/index.d.ts"
+    }
+  },
+	"repository": "github:SeregPie/lodash.combinations",
+	"peerDependencies": {
+		"lodash": "^4"
+	},
+	"optionalDependencies": {
+		"@types/lodash": "^4"
+	}
+}

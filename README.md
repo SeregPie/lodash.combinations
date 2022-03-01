@@ -19,18 +19,22 @@ Returns a new array.
 npm i lodash.combinations
 ```
 
-### ES module
+---
+
+Import inside an ES module.
 
 ```javascript
 import 'lodash.combinations';
 import _ from 'lodash';
 ```
 
-### Node
+*or*
+
+Import inside a CommonJS module.
 
 ```javascript
 require('lodash.combinations');
-let _ = require('lodash');
+const _ = require('lodash');
 ```
 
 ### browser
