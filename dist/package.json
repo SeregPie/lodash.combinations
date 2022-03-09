@@ -19,11 +19,6 @@
       "default": "./index.umd.js",
 			"types": "./index.d.ts"
     },
-    "./bsnntqzx": {
-      "import": "./bsnntqzx/index.esm.js",
-      "default": "./bsnntqzx/index.umd.js",
-			"types": "./bsnntqzx/index.d.ts"
-    },
     "./nassdoej": {
 			"import": "./nassdoej/index.esm.js",
       "default": "./nassdoej/index.umd.js",

@@ -1,8 +1,15 @@
-import values from 'lodash/values';
+type Collection<T> = Iterable<T> | ArrayLike<T> | Record<string | number, T>;
 
-declare const forEachCombination: {
-	(v: number): number;
-	(v: string): string;
+interface Iteratee<T> {
+	(value: T, index: number): any;
+}
+
+declare const combinations: {
+	<T>(collection: Collection<T>, k: number): Array<T>;
 };
 
-export default forEachCombination;
+declare const forEachCombination: {
+	<T>(collection: Collection<T>, k: number, iteratee: Iteratee<T>): void;
+};
+
+export { combinations, forEachCombination };

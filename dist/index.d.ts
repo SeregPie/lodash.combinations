@@ -1,5 +1,4 @@
-import combinations from './bsnntqzx';
-import forEachCombination from './nassdoej';
+import {combinations, forEachCombination} from './nassdoej';
 
 declare module 'lodash' {
 	interface LoDashStatic {
