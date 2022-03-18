@@ -1,107 +1,103 @@
 const assert = require('assert/strict');
 
 function* forEachCombination(iterable, k) {
-	function* f(array, k) {
-		if (k > 1) {
-			k--;
-			let n = array.length - k;
-			for (let i = 0; i < n; i++) {
-				let ysdrfztq = array[i];
-				let fceszvwa = array.slice(i + 1);
-				for (let aibhatoz of f(fceszvwa, k)) {
-					yield [ysdrfztq, ...aibhatoz];
-				}
+	function* f(values, k) {
+		if (values.length < k) {
+			// pass
+		} else
+		if (k === 0) {
+			yield [];
+		} else
+		if (k === 1) {
+			for (let value of values) {
+				yield [value];
 			}
 		} else {
-			for (let ysdrfztq of array) {
-				yield [ysdrfztq];
+			k--;
+			let n = values.length - k;
+			for (let i = 0; i < n; i++) {
+				let value = values[i];
+				let fceszvwa = values.slice(i + 1);
+				for (let otherValues of f(fceszvwa, k)) {
+					yield [value, ...otherValues];
+				}
 			}
 		}
 	}
-	if (k > 0) {
-		let array = [...iterable];
-		if (array.length >= k) {
-			yield* f(array, k);
-		}
-	} else {
-		yield [];
-	}
+	yield* f([...iterable], k);
 }
 
 function* forEachPermutation(iterable, k) {
-	function* f(array, k) {
-		if (k > 1) {
-			k--;
-			let n = array.length;
-			for (let i = 0; i < n; i++) {
-				let ysdrfztq = array[i];
-				let fceszvwa = [...array];
-				fceszvwa.splice(i, 1);
-				for (let aibhatoz of f(fceszvwa, k)) {
-					yield [ysdrfztq, ...aibhatoz];
-				}
+	function* f(values, k) {
+		if (values.length < k) {
+			// pass
+		} else
+		if (k === 0) {
+			yield [];
+		} else
+		if (k === 1) {
+			for (let value of values) {
+				yield [value];
 			}
 		} else {
-			for (let ysdrfztq of array) {
-				yield [ysdrfztq];
+			k--;
+			let n = values.length;
+			for (let i = 0; i < n; i++) {
+				let value = values[i];
+				let fceszvwa = [...values];
+				fceszvwa.splice(i, 1);
+				for (let otherValues of f(fceszvwa, k)) {
+					yield [value, ...otherValues];
+				}
 			}
 		}
 	}
-	if (k > 0) {
-		let array = [...iterable];
-		if (array.length >= k) {
-			yield* f(array, k);
-		}
-	} else {
-		yield [];
-	}
+	yield* f([...iterable], k);
 }
 
 function* forEachMulticombination(iterable, k) {
-	function* f(array, k) {
-		if (k > 1) {
-			k--;
-			let n = array.length;
-			for (let i = 0; i < n; i++) {
-				let ysdrfztq = array[i];
-				let fceszvwa = array.slice(i);
-				for (let aibhatoz of f(fceszvwa, k)) {
-					yield [ysdrfztq, ...aibhatoz];
-				}
+	function* f(values, k) {
+		if (k === 0) {
+			yield [];
+		} else
+		if (k === 1) {
+			for (let value of values) {
+				yield [value];
 			}
 		} else {
-			for (let ysdrfztq of array) {
-				yield [ysdrfztq];
+			k--;
+			let n = values.length;
+			for (let i = 0; i < n; i++) {
+				let value = values[i];
+				let fceszvwa = values.slice(i);
+				for (let otherValues of f(fceszvwa, k)) {
+					yield [value, ...otherValues];
+				}
 			}
 		}
 	}
-	if (k > 0) {
-		yield* f([...iterable], k);
-	} else {
-		yield [];
-	}
+	yield* f([...iterable], k);
 }
 
 function* forEachMultipermutation(iterable, k) {
-	function* f(array, k) {
-		if (k > 1) {
-			k--;
-			for (let ysdrfztq of array) {
-				for (let aibhatoz of f(array, k)) {
-					yield [ysdrfztq, ...aibhatoz];
-				}
+	function* f(values, k) {
+		if (k === 0) {
+			yield [];
+		} else
+		if (k === 1) {
+			for (let value of values) {
+				yield [value];
 			}
 		} else {
-			for (let ysdrfztq of array) {
-				yield [ysdrfztq];
+			k--;
+			for (let value of values) {
+				for (let otherValues of f(values, k)) {
+					yield [value, ...otherValues];
+				}
 			}
 		}
 	}
-	if (k > 0) {
-		yield* f([...iterable], k);
-	} else {
-		yield [];
-	}
+	yield* f([...iterable], k);
 }
 
 const _combinations = ((iterable, k) =>
