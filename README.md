@@ -1,15 +1,29 @@
 # lodash.combinations
 
-`_.combinations(collection, n)`
+`_.combinations(collection, k)`
 
 Calculates all possible combinations without repetition of a certain size.
 
 | argument | description |
 | ---: | :--- |
-| `collection` | A collection of distinct values to calculate the combinations from. |
-| `n` | The number of values to combine. |
+| `collection` | A collection of distinct values to calculate the groups from. |
+| `k` | A number as the size of each group. |
 
-Returns a new array.
+Returns the combinations as an array of arrays.
+
+---
+
+`_.forEachCombination(collection, k, iteratee)`
+
+Iterates over the calculated groups. The iteratee function may exit the iteration early by explicitly returning `false`.
+
+TODO
+
+| argument | description |
+| ---: | :--- |
+| `collection` | TODO |
+| `k` | TODO |
+| `iteratee` | TODO A function to invoke per each iteration. |
 
 ## setup
 
@@ -21,7 +35,7 @@ npm i lodash.combinations
 
 ---
 
-Import inside an ES module.
+Use as mixins.
 
 ```javascript
 import 'lodash.combinations';
@@ -30,11 +44,10 @@ import _ from 'lodash';
 
 *or*
 
-Import inside a CommonJS module.
+Use as standalone methods.
 
 ```javascript
-require('lodash.combinations');
-const _ = require('lodash');
+import {combinations, forEachCombination} from 'lodash.combinations/pgjzmols';
 ```
 
 ### browser
@@ -62,12 +75,18 @@ let combinations = _.flatMap([2, 4, 6], (v, i, a) => _.combinations(a, i + 1));
 
 ---
 
-Also accepts array-like values.
+TODO
 
 ```javascript
-let combinations = _('abcde').combinations(3).map(v => _.join(v, '')).value();
-// => ['abc', 'abd', 'abe', 'acd', 'ace', 'ade', 'bcd', 'bce', 'bde', 'cde']
+// TODO
+_.forEachCombination(??, 2, () => {
+  if (??) {
+
+    return false;
+  }
+});
 ```
+
 
 ## see also
 

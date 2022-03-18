@@ -5,11 +5,11 @@ interface Iteratee<T> {
 }
 
 declare const combinations: {
-	<T>(collection: Collection<T>, k: number): Array<T>;
+	<T>(collection: Collection<T>, k: number): Array<Array<T>>;
 };
 
 declare const forEachCombination: {
-	<T>(collection: Collection<T>, k: number, iteratee: Iteratee<T>): void;
+	<T>(collection: Collection<T>, k: number, iteratee: Iteratee<Array<T>>): void;
 };
 
 export { combinations, forEachCombination };
