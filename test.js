@@ -1,103 +1,116 @@
 const assert = require('assert/strict');
 
+// lcdgspsw: array, values
+// hrwhznte: value, v
+// srkamkxy: groups, otherValues
+// fceszvwa: newArray, nextArray, newValues, nextValues
+
 function* forEachCombination(iterable, k) {
-	function* f(values, k) {
-		if (values.length < k) {
-			// pass
-		} else
-		if (k === 0) {
-			yield [];
-		} else
-		if (k === 1) {
-			for (let value of values) {
-				yield [value];
+	function* f(lcdgspsw, k) {
+		if (k > 1) {
+			k--;
+			let n = lcdgspsw.length - k;
+			for (let i = 0; i < n; i++) {
+				let hrwhznte = lcdgspsw[i];
+				let fceszvwa = lcdgspsw.slice(i + 1);
+				for (let srkamkxy of f(fceszvwa, k)) {
+					yield [hrwhznte, ...srkamkxy];
+				}
 			}
 		} else {
-			k--;
-			let n = values.length - k;
-			for (let i = 0; i < n; i++) {
-				let value = values[i];
-				let fceszvwa = values.slice(i + 1);
-				for (let otherValues of f(fceszvwa, k)) {
-					yield [value, ...otherValues];
-				}
+			for (let hrwhznte of lcdgspsw) {
+				yield [hrwhznte];
 			}
 		}
 	}
-	yield* f([...iterable], k);
+	let lcdgspsw = [...iterable];
+	if (lcdgspsw.length < k) {
+		// pass
+	} else
+	if (k > 0) {
+		yield* f(lcdgspsw, k);
+	} else {
+		yield [];
+	}
 }
 
 function* forEachPermutation(iterable, k) {
-	function* f(values, k) {
-		if (values.length < k) {
-			// pass
-		} else
-		if (k === 0) {
-			yield [];
-		} else
-		if (k === 1) {
-			for (let value of values) {
-				yield [value];
+	function* f(lcdgspsw, k) {
+		if (k > 1) {
+			k--;
+			let n = lcdgspsw.length;
+			for (let i = 0; i < n; i++) {
+				let hrwhznte = lcdgspsw[i];
+				let fceszvwa = [...lcdgspsw];
+				fceszvwa.splice(i, 1);
+				for (let srkamkxy of f(fceszvwa, k)) {
+					yield [hrwhznte, ...srkamkxy];
+				}
 			}
 		} else {
-			k--;
-			let n = values.length;
-			for (let i = 0; i < n; i++) {
-				let value = values[i];
-				let fceszvwa = [...values];
-				fceszvwa.splice(i, 1);
-				for (let otherValues of f(fceszvwa, k)) {
-					yield [value, ...otherValues];
-				}
+			for (let hrwhznte of lcdgspsw) {
+				yield [hrwhznte];
 			}
 		}
 	}
-	yield* f([...iterable], k);
+	let lcdgspsw = [...iterable];
+	if (lcdgspsw.length < k) {
+		// pass
+	} else
+	if (k > 0) {
+		yield* f(lcdgspsw, k);
+	} else {
+		yield [];
+	}
 }
 
 function* forEachMulticombination(iterable, k) {
-	function* f(values, k) {
-		if (k === 0) {
-			yield [];
-		} else
-		if (k === 1) {
-			for (let value of values) {
-				yield [value];
+	function* f(lcdgspsw, k) {
+		if (k > 1) {
+			k--;
+			let n = lcdgspsw.length;
+			for (let i = 0; i < n; i++) {
+				let hrwhznte = lcdgspsw[i];
+				let fceszvwa = lcdgspsw.slice(i);
+				for (let srkamkxy of f(fceszvwa, k)) {
+					yield [hrwhznte, ...srkamkxy];
+				}
 			}
 		} else {
-			k--;
-			let n = values.length;
-			for (let i = 0; i < n; i++) {
-				let value = values[i];
-				let fceszvwa = values.slice(i);
-				for (let otherValues of f(fceszvwa, k)) {
-					yield [value, ...otherValues];
-				}
+			for (let hrwhznte of lcdgspsw) {
+				yield [hrwhznte];
 			}
 		}
 	}
-	yield* f([...iterable], k);
+	let lcdgspsw = [...iterable];
+	if (k > 0) {
+		yield* f(lcdgspsw, k);
+	} else {
+		yield [];
+	}
 }
 
 function* forEachMultipermutation(iterable, k) {
-	function* f(values, k) {
-		if (k === 0) {
-			yield [];
-		} else
-		if (k === 1) {
-			for (let value of values) {
-				yield [value];
+	function* f(lcdgspsw, k) {
+		if (k > 1) {
+			k--;
+			for (let hrwhznte of lcdgspsw) {
+				for (let srkamkxy of f(lcdgspsw, k)) {
+					yield [hrwhznte, ...srkamkxy];
+				}
 			}
 		} else {
-			k--;
-			for (let value of values) {
-				for (let otherValues of f(values, k)) {
-					yield [value, ...otherValues];
-				}
+			for (let hrwhznte of lcdgspsw) {
+				yield [hrwhznte];
 			}
 		}
 	}
-	yield* f([...iterable], k);
+	let lcdgspsw = [...iterable];
+	if (k > 0) {
+		yield* f(lcdgspsw, k);
+	} else {
+		yield [];
+	}
 }
 
 const _combinations = ((iterable, k) =>

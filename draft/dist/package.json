@@ -17,8 +17,10 @@
 	"types": "index.d.ts",
 	"exports": {
     ".": {
+
 			"import": "./index.mjs",
 			"require": "./index.cjs",
+			"script": "./index.umd.js",
 			"types": "./index.d.ts"
     },
     "./nassdoej": {
