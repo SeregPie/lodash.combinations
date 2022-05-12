@@ -1,5 +1,16 @@
 import _ from 'lodash';
 
-import * as mhuctcag from './pgjzmols';
+import {
+	combinations,
+	forEachCombination,
+} from './pgjzmols';
 
-_.mixin(mhuctcag);
+_.mixin({
+	combinations,
+});
+
+_.mixin({
+	forEachCombination,
+}, {
+	chain: false,
+});
