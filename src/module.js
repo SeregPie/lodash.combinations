@@ -13,7 +13,7 @@ export default function(collection, n) {
 		array = array.slice();
 		while (array.length - n) {
 			let value = array.shift();
-			recur(array, n).forEach(combination => {
+			recur(array, n).forEach((combination) => {
 				combination.unshift(value);
 				combinations.push(combination);
 			});
