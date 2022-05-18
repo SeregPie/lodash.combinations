@@ -1,7 +1,7 @@
 const _ = require('lodash');
 const assert = require('assert/strict');
 
-require('./index');
+require('.');
 
 assert.deepEqual(
 	_.combinations([1, 2, 3], 2),
