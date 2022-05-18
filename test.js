@@ -1,5 +1,5 @@
-let _ = require('lodash');
-let assert = require('assert').strict;
+const _ = require('lodash');
+const assert = require('assert/strict');
 
 require('./index');
 
@@ -13,9 +13,7 @@ assert.deepEqual(
 );
 assert.deepEqual(
 	_.combinations([1, 2, 3], 3),
-	[
-		[1, 2, 3],
-	],
+	[[1, 2, 3]],
 );
 assert.deepEqual(
 	_.combinations([1, 2, 3], 1),
@@ -27,21 +25,17 @@ assert.deepEqual(
 );
 assert.deepEqual(
 	_.combinations([1, 2, 3], 0),
-	[
-		[],
-	],
+	[[]],
 );
 assert.deepEqual(
-	_.combinations([1, 2, 3], 9),
+	_.combinations([1, 2, 3], 6),
 	[],
 );
 assert.deepEqual(
 	_.combinations([], 0),
-	[
-		[],
-	],
+	[[]],
 );
 assert.deepEqual(
-	_.combinations([], 9),
+	_.combinations([], 6),
 	[],
 );
