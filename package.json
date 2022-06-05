@@ -1,6 +1,6 @@
 {
 	"name": "lodash.combinations",
-	"version": "18.11.0",
+	"version": "18.11.1",
 	"description": "Calculates all possible combinations without repetition of a certain size.",
 	"keywords": [
 		"array",
